@@ -4,4 +4,8 @@ class Contact < ApplicationRecord
   validates :email, uniqueness: {scope: :name}, format: { with: URI::MailTo::EMAIL_REGEXP }
   # Feature 3 - 7 or 10 digit phone numbers
   validates :phone, format: { with: /(\d{3}-){1,2}(\d{4})/, message: 'Phone number must be in 7 digit(###-####) or 10 digit (###-###-####) format' }
+
+  include Gravtastic
+  gravtastic
+
 end
