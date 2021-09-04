@@ -5,8 +5,8 @@ services:
     image: oldgrandpavanu/flexcms:web
     hostname: Flex.Web
     container_name: Flex.Web
-    # depends_on:
-    #   - Kafka.Broker
+    ports: 
+      - "3000:3000"
     environment:      
       TZ: 'America/New_York'
     entrypoint: /bin/bash
