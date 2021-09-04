@@ -1,8 +1,8 @@
 <table class="table">
   <tr>
-    <th class='active'>Name</th>
-    <th>E-mail</th>
-    <th>Phone</th>
+    <th class='active'><%= link_to "Name", :sort => 'name' %></th>
+    <th><%= link_to "E-mail", :sort => 'email' %></th>
+    <th><%= link_to "Phone", :sort => 'phone' %></th>
   </tr>
  
   <% @contacts.each do |contact| %>
