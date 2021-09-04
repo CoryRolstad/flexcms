@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Ned Nederlander
+  email: ned@fbsdata.com
+  phone: 555-555-5555
+
+two:
+  name: Lucky Day
+  email: lucky@fbsdata.com
+  phone: 123-456-7890

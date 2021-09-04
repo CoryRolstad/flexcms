@@ -1,0 +1,16 @@
+version: '3.7'
+# This docker-compose is to create a baseline to completely make the whole setup ephemeral.
+services:
+  Flex_CMS:
+    image: oldgrandpavanu/flexcms:web
+    hostname: Flex.Web
+    container_name: Flex.Web
+    # depends_on:
+    #   - Kafka.Broker
+    environment:      
+      TZ: 'America/New_York'
+    entrypoint: /bin/bash
+    volumes: 
+      - //c/Users/Cory/Documents/Development/flex_cms-1:/usr/src/app
+    stdin_open: true
+    tty: true
