@@ -38,7 +38,7 @@ class ContactsController < ApplicationController
 
   def contact_params
     if params[:contact]
-      params.require(:contact).permit(:name, :email, :phone, :birthday)
+      params.require(:contact).permit(:name, :email, :phone, :birthday, :note)
     end
   end
 
