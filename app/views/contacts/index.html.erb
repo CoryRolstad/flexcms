@@ -6,6 +6,7 @@
     <th><%= link_to "E-mail", :sort => 'email' %></th>
     <th><%= link_to "Phone", :sort => 'phone' %></th>
     <th>Gravatar</th>
+    <th>Action</th>
   </tr>
  
   <% @contacts.each do |contact| %>
@@ -14,6 +15,7 @@
       <td><%= mail_to contact.email, contact.email, {:subject=>"Hello, #{contact.name}"} %></td>
       <td><%= contact.phone %></td>
       <td><%= image_tag contact.gravatar_url %></td>
+      <td><%= link_to( "Delete", contact_path(contact), method: :delete, class: "btn btn-danger" ) %></td>
     </tr>
   <% end %>
 
