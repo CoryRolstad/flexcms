@@ -1,4 +1,4 @@
-<%= form_for :contact, url: {action: "edit"} do |f| %>
+<%= form_with model: @contact, url: {action: "edit"} do |f| %>
 
     <% if @contact && @contact.errors.any? %>
     <div class="alert alert-danger" role="alert">
@@ -37,7 +37,19 @@
       <span class="input-group-addon"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></span>
       <%= f.text_area :note, :class => "form-control", :placeholder => "Enter Notes Here" %>
     </div>
-   
+
+    Numbers: <%= @contact.phone_numbers.first.inspect %>
+
+
+    <%= f.fields_for :phone_numbers do |phone_numbers_form| %>
+      <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span>
+            <%= phone_numbers_form.phone_field :number, :class => "form-control", :placeholder => "###-###-####" %>
+            <%= phone_numbers_form.text_field :description, :class => "form-control", :placeholder => "Phone Type (Mobile, Home, Work, Fax)" %>
+            <%= phone_numbers_form.check_box :primary, :class => "form-control" %>
+      </div>
+    <% end %>
+
     <div class="input-group">
       <%= f.submit :class => 'btn btn-primary', data: { disable_with: false } %>
     </div>
