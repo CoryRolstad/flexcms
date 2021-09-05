@@ -27,26 +27,22 @@
       <span class="input-group-addon">@</span>
       <%= f.text_field :email, :class => "form-control" %>
     </div>
-  
-    <div class="input-group">
-      <span class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span>
-      <%= f.telephone_field :phone, :class => "form-control", :placeholder => "###-###-####" %>
-    </div>
 
     <div class="input-group">
       <span class="input-group-addon"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></span>
       <%= f.text_area :note, :class => "form-control", :placeholder => "Enter Notes Here" %>
     </div>
 
-    Numbers: <%= @contact.phone_numbers.first.inspect %>
-
 
     <%= f.fields_for :phone_numbers do |phone_numbers_form| %>
-      <div class="input-group">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span>
+      <div class="input-group">          
+            <%= phone_numbers_form.label :name %><br />
             <%= phone_numbers_form.phone_field :number, :class => "form-control", :placeholder => "###-###-####" %>
+            <%= phone_numbers_form.label :description %><br />
             <%= phone_numbers_form.text_field :description, :class => "form-control", :placeholder => "Phone Type (Mobile, Home, Work, Fax)" %>
-            <%= phone_numbers_form.check_box :primary, :class => "form-control" %>
+            <%= phone_numbers_form.label :primary %><br />
+            <%= phone_numbers_form.check_box :primary %>
+            <%= link_to "Delete", phone_numbers_form.object, method: "delete", class: "btn btn-danger form-control" %>
       </div>
     <% end %>
 
