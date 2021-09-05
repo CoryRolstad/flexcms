@@ -19,6 +19,11 @@
   </div>
 
   <div class="input-group">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+    <%= f.date_field :birthday, :class => "form-control" %>
+  </div>
+
+  <div class="input-group">
     <span class="input-group-addon">@</span>
     <%= f.text_field :email, :class => "form-control" %>
   </div>

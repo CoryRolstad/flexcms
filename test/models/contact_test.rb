@@ -9,14 +9,17 @@ class ContactTest < ActiveSupport::TestCase
   test "it should have a name" do
     new_contact = Contact.new name: nil,
                               email: 'test@fbsdata.com',
-                              phone: '123-456-7890'
+                              phone: '123-456-7890',
+                              birthday: Time.now
+
     assert !new_contact.valid?
   end
 
   test "it should have a unique name/email combo" do
     new_contact = Contact.new name: @test_contact.name,
                               email: @test_contact.email,
-                              phone: '123-456-7890'
+                              phone: '123-456-7890',
+                              birthday: Time.now
     assert !new_contact.valid?
   end
 end
