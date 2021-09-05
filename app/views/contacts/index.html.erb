@@ -1,6 +1,6 @@
 <%= will_paginate @contacts %>
 
-<table class="table">
+<table class="table" id="contacts-table">
   <tr>
     <th class='active'><%= link_to "Name", :sort => 'name' %></th>
     <th><%= link_to "E-mail", :sort => 'email' %></th>
@@ -15,8 +15,17 @@
       <td><%= mail_to contact.email, contact.email, {:subject=>"Hello, #{contact.name}"} %></td>
       <td><%= contact.phone %></td>
       <td><%= image_tag contact.gravatar_url %></td>
-      <td><%= link_to( "Delete", contact_path(contact), method: :delete, class: "btn btn-danger" ) %></td>
+      <td> <%= link_to 'Edit', contact, remote: true, class: "btn btn-danger", cached: true %> <%= link_to( "Delete", contact_path(contact), method: :delete, class: "btn btn-danger" ) %></td>
+      
     </tr>
+
+    <tr id=<%= "contact-edit-row-#{contact.id}" %> class="hidden">
+      <th colspan="5">
+        <div id=<%= "current-contact-#{contact.id}" %>>
+        </div>      
+      </th>      
+    </tr>
+
   <% end %>
 
 </table>
