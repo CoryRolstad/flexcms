@@ -1,4 +1,6 @@
 class Contact < ApplicationRecord
+  # Feature 15 - has many relationship
+  has_many :phone_numbers
 
   validates :name, presence: true
   # Feature 2 - opted to leverage in framework regex vs external gem to reduce dependencies. 
