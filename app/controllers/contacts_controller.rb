@@ -3,6 +3,12 @@ class ContactsController < ApplicationController
     @contacts = Contact.order(params[:sort]).page(params[:page]).per_page(20)
   end
 
+  def destroy
+    Contact.find(params[:id]).destroy
+    flash[:success] = "The contact was successfully deleted."
+    redirect_to :root
+  end
+
   def new
   end
 
