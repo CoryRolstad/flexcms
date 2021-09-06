@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  contact: one
-  number: MyString
-  description: MyString
+  contact_id: 1
+  number: 670-144-4555
+  primary: true
+  description: Work
 
 two:
-  contact: two
-  number: MyString
-  description: MyString
+  contact_id: 1
+  number: 670-148-4555
+  primary: true
+  description: Mobile
