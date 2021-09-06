@@ -10,7 +10,6 @@ class ContactBirthdayValidationTest < ActiveSupport::TestCase
     test "it should have valid format" do
         invalid_email_contact = Contact.new name: @test_contact.name,
                                             email: @test_contact.email,
-                                            phone: @test_contact.phone,
                                             birthday: Time.now - 21.years
                                             
         assert invalid_email_contact.valid?
@@ -19,7 +18,6 @@ class ContactBirthdayValidationTest < ActiveSupport::TestCase
     test "it should have valid format, and not be nil" do
         invalid_email_contact = Contact.new name: @test_contact.name,
                                             email: @test_contact.email,
-                                            phone: @test_contact.phone,
                                             birthday: nil
                                             
         assert !invalid_email_contact.valid?
