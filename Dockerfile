@@ -10,4 +10,4 @@ RUN bundle install
 
 COPY . .
 
-CMD ["./init.sh"]
+CMD ["/usr/src/app/init.sh"]
