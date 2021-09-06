@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
   end
 
   def show
-    @contact = Contact.includes([:phone_numbers, {:phone_numbers => :phone_type}]).find(params[:id])
+    @contact = Contact.includes([:phone_numbers]).find(params[:id])
     respond_to do |format|
       format.js {render layout: false}
     end
@@ -49,7 +49,6 @@ class ContactsController < ApplicationController
             :id,
             :contact_id,
             :number,
-            :phone_type_id,
             :primary,
             :description
           ]

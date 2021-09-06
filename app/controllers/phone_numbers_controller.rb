@@ -24,6 +24,8 @@ class PhoneNumbersController < ApplicationController
     end
 
     def new
+        @phone_number = PhoneNumber.new
+        @phone_number.contact_id = params[:contact_id] if !params[:contact_id].nil?
     end
   
     def create
@@ -39,8 +41,7 @@ class PhoneNumbersController < ApplicationController
   
     def phone_number_params
       if params[:phone_number]
-        params.require(:contact).permit(
-          :id,
+        params.require(:phone_number).permit(
           :contact_id,
           :number,
           :primary,

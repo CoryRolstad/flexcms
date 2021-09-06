@@ -33,10 +33,12 @@
       <%= f.text_area :note, :class => "form-control", :placeholder => "Enter Notes Here" %>
     </div>
 
+    <h2>Phone Numbers:</h2><hr/>
+    <%= link_to "+ Add New Phone Number", new_phone_number_path(contact_id: @contact.id), class: "btn btn-success" %>
 
     <%= f.fields_for :phone_numbers do |phone_numbers_form| %>
       <div class="input-group">          
-            <%= phone_numbers_form.label :name %><br />
+            <%= phone_numbers_form.label :number %><br />
             <%= phone_numbers_form.phone_field :number, :class => "form-control", :placeholder => "###-###-####" %>
             <%= phone_numbers_form.label :description %><br />
             <%= phone_numbers_form.text_field :description, :class => "form-control", :placeholder => "Phone Type (Mobile, Home, Work, Fax)" %>
@@ -46,8 +48,9 @@
       </div>
     <% end %>
 
+    
     <div class="input-group">
-      <%= f.submit :class => 'btn btn-primary', data: { disable_with: false } %>
+      <%= f.submit :class => 'btn btn-primary', data: { disable_with: false } %>       
     </div>
   <% end %>
   
