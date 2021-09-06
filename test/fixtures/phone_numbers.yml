@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contact_id: 1
+  number: 670-144-4555
+  primary: true
+  description: Work
+
+two:
+  contact_id: 1
+  number: 670-148-4555
+  primary: true
+  description: Mobile

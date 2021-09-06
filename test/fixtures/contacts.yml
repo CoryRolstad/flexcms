@@ -3,29 +3,24 @@
 one:
   name: Ned Nederlander
   email: ned@fbsdata.com
-  phone: 555-555-5555
   birthday: 01-29-1909
 
 two:
   name: Lucky Day
   email: lucky@fbsdata.com
-  phone: 123-456-7890
   birthday: 01-29-1909
 
 three:
   name: Lu Daya
   email: lucky2@fbsdata.com
-  phone: 133-456-7890
   birthday: 01-29-1909
 
 four:
   name: ucky yet
   email: ly@fbsdata.com
-  phone: 143-456-7890
   birthday: 01-29-1909
 
 five:
   name: ucky yet
   email: ly@fbsdata.com
-  phone: 143-456-7890
   birthday: 01-29-1909

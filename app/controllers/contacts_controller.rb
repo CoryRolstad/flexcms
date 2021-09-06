@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
   end
 
   def show
-    @contact = Contact.find(params[:id])
+    @contact = Contact.includes([:phone_numbers]).find(params[:id])
     respond_to do |format|
       format.js {render layout: false}
     end
@@ -38,7 +38,21 @@ class ContactsController < ApplicationController
 
   def contact_params
     if params[:contact]
-      params.require(:contact).permit(:name, :email, :phone, :birthday, :note)
+      params.require(:contact).permit(
+        :name, 
+        :email, 
+        :phone, 
+        :birthday, 
+        :note, 
+        :phone_numbers_attributes => 
+          [
+            :id,
+            :contact_id,
+            :number,
+            :primary,
+            :description
+          ]
+      )
     end
   end
 
